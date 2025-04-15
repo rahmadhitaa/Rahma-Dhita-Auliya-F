@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Inventory</h2>
+            <ul>
+                <li><a href="#" class="active">Dashboard</a></li>
+                <li><a href="#">Stock Management</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Reports</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <h1>Dashboard</h1>
+                <div class="user-info">
+                    <span>Superuser</span>
+                </div>
+            </div>
+
+            <!-- Cards -->
+            <div class="cards">
+                <div class="card">
+                    <h3>Total Items</h3>
+                    <p id="total-items">0</p>
+                </div>
+                <div class="card">
+                    <h3>Low Stock</h3>
+                    <p id="low-stock">0</p>
+                </div>
+                <div class="card">
+                    <h3>Categories</h3>
+                    <p id="categories">0</p>
+                </div>
+            </div>
+
+            <!-- Add Item Form -->
+            <div class="form-section">
+                <h3>Add New Item</h3>
+                <form id="add-item-form">
+                    <input type="text" name="name" placeholder="Item Name" required>
+                    <input type="text" name="category" placeholder="Category" required>
+                    <input type="number" name="quantity" placeholder="Quantity" required>
+                    <input type="number" name="price" placeholder="Price" step="0.01" required>
+                    <button type="submit">Add Item</button>
+                </form>
+            </div>
+
+            <!-- Inventory Table -->
+            <div class="table-section">
+                <h3>Inventory List</h3>
+                <table id="inventory-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Created At</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventory-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

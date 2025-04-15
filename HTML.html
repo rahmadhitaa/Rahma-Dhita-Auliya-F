@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StrawberryMuffin - Manajemen Persediaan</title>
+    <style>
+        body {
+            background-color: #ffe6f0;
+            font-family: 'Arial', sans-serif;
+            color: #ff5e8e;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            position: relative;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #ff3366;
+            background-color: #fff0f5;
+            padding: 10px;
+            border-radius: 15px;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(255, 105, 180, 0.3);
+            margin-bottom: 20px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 6px 15px rgba(255, 182, 193, 0.5);
+            position: relative;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 2px solid #ffb6c1;
+            color: #ff5e8e;
+        }
+        th {
+            background-color: #ffe4e1;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #fff0f5;
+        }
+        .form-group {
+            margin: 15px 0;
+        }
+        label {
+            font-size: 1.1em;
+            color: #ff3366;
+            margin-right: 10px;
+        }
+        input[type="text"], input[type="number"] {
+            padding: 8px;
+            border: 2px solid #ffb6c1;
+            border-radius: 10px;
+            background-color: #fff0f5;
+            color: #ff5e8e;
+            outline: none;
+        }
+        input[type="submit"] {
+            background-color: #ff69b4;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #ff1493;
+        }
+        /* Dekorasi Pita */
+        .ribbon {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: url('https://www.pngall.com/wp-content/uploads/2016/05/Pink-Ribbon-PNG-Clipart.png') no-repeat center;
+            background-size: contain;
+            z-index: 10;
+        }
+        .ribbon-top-left {
+            top: -10px;
+            left: -10px;
+        }
+        .ribbon-bottom-right {
+            bottom: -10px;
+            right: -10px;
+            transform: rotate(90deg);
+        }
+        /* Dekorasi Stiker */
+        .sticker {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: url('https://www.pngall.com/wp-content/uploads/5/Cute-Sticker.png') no-repeat center;
+            background-size: contain;
+        }
+        .sticker1 {
+            top: 20px;
+            right: 20px;
+        }
+        .sticker2 {
+            bottom: 20px;
+            left: 20px;
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #ff69b4;
+        }
+    </style>
+</head>
+<body>
+    <h1>🍓 StrawberryMuffin 🍓</h1>
+    <div class="container">
+        <div class="ribbon ribbon-top-left"></div>
+        <div class="ribbon ribbon-bottom-right"></div>
+        <div class="sticker sticker1"></div>
+        <div class="sticker sticker2"></div>
+
+        <h2>Manajemen Persediaan</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="nama_barang">Nama Barang:</label>
+                <input type="text" id="nama_barang" name="nama_barang" placeholder="Masukkan nama barang" required>
+            </div>
+            <div class="form-group">
+                <label for="jumlah">Jumlah:</label>
+                <input type="number" id="jumlah" name="jumlah" placeholder="Masukkan jumlah" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="harga">Harga (Rp):</label>
+                <input type="number" id="harga" name="harga" placeholder="Masukkan harga" min="0" required>
+            </div>
+            <input type="submit" value="Tambah Barang">
+        </form>
+
+        <h3>Daftar Persediaan</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Barang</th>
+                    <th>Jumlah</th>
+                    <th>Harga (Rp)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Muffin Strawberry</td>
+                    <td>50</td>
+                    <td>15,000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Cupcake Vanilla</td>
+                    <td>30</td>
+                    <td>12,000</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Cookie Choco</td>
+                    <td>20</td>
+                    <td>10,000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <footer>Made with 💖 by StrawberryMuffin Team</footer>
+</body>
+</html>

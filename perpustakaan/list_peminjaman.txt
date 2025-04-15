@@ -1,0 +1,26 @@
+<?php
+include 'config.php';
+
+$query = "SELECT p.id_peminjaman, a.nama, p.tanggal_pinjam, p.tanggal_kembali 
+          FROM peminjaman p
+          JOIN anggota a ON p.id_anggota = a.id_anggota";
+
+$result = mysqli_query($conn, $query);
+
+while ($row = mysqli_fetch_assoc($result)) {
+    echo "<h3>Peminjaman #{$row['id_peminjaman']} oleh {$row['nama']}</h3>";
+    echo "Tanggal Pinjam: {$row['tanggal_pinjam']}<br>";
+    echo "Tanggal Kembali: {$row['tanggal_kembali']}<br>";
+
+    $id = $row['id_peminjaman'];
+    $detail = mysqli_query($conn, "SELECT b.judul, d.jumlah 
+                                   FROM detail_peminjaman d
+                                   JOIN buku b ON d.id_buku = b.id_buku
+                                   WHERE d.id_peminjaman = $id");
+    echo "<ul>";
+    while ($d = mysqli_fetch_assoc($detail)) {
+        echo "<li>{$d['judul']} - {$d['jumlah']} buku</li>";
+    }
+    echo "</ul><hr>";
+}
+?>

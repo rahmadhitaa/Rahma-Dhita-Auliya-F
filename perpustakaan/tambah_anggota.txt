@@ -1,0 +1,20 @@
+<?php
+include 'config.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nama = $_POST['nama'];
+    $alamat = $_POST['alamat'];
+    $telepon = $_POST['telepon'];
+
+    $sql = "INSERT INTO anggota (nama, alamat, telepon) VALUES ('$nama', '$alamat', '$telepon')";
+    mysqli_query($conn, $sql);
+    echo "Anggota berhasil ditambahkan!";
+}
+?>
+
+<form method="POST">
+    Nama: <input type="text" name="nama"><br>
+    Alamat: <textarea name="alamat"></textarea><br>
+    Telepon: <input type="text" name="telepon"><br>
+    <button type="submit">Simpan</button>
+</form>
